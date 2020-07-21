@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('admin.template.login');
+});
+Route::get('home', function () {
     return view('admin.template.default');
 });
