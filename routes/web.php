@@ -13,9 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.template.login');
-});
-Route::get('home', function () {
-    return view('admin.template.default');
-});
+// Route::get('/', function () {
+//     return view('admin.template.login');
+// });
+// Route::get('home', function () {
+//     return view('admin.template.default');
+// });
+// Route::get('/register', function () {
+//     return view('admin.template.register');
+// });
+
+Route::get('/', 'AuthController@login');
+Route::get('/home', 'AuthController@home');
+Route::get('/register', 'AuthController@register');
