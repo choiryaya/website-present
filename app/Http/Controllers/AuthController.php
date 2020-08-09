@@ -11,14 +11,14 @@ class AuthController extends Controller
     public function login()
     {
        
-      return view('admin.template.login');
+      return view('auth.login');
     }
     public function home() 
     {
-      return view('admin.template.default');
+      return view('auth.default');
     }
     public function register()
     {
-      return view('admin.template.register');
+      return view('auth.register');
     }
 }
