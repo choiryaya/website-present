@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,6 +28,13 @@ Route::get('/', 'AuthController@login');
 Route::get('/home', 'AuthController@home');
 Route::get('/register', 'AuthController@register');
 
+
+Route::get('/logout', 'AuthController@logout')->name('logout');
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'Admin\AdminController@index')->name('home');
+Route::get('/rfid/data', 'Admin\AdminController@rfid')->name('rfid.data');
+//admin
+Route::resource('rfid','Admin\RfidController');
+
