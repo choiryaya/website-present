@@ -23,7 +23,7 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-      Interface
+      Menu
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
@@ -34,6 +34,20 @@
       </a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="{{ route('rfid.index')}}">
+          <i class="fas fa-fw fa-square"></i>
+          <span>RFID Data</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+              <i class="fas fa-fw fa-wrench"></i>
+              <span>Equipment Data</span>
+            </a>
+          </li>
+          <hr class="sidebar-divider d-none d-md-block">
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
       <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
@@ -41,20 +55,10 @@
         <span>Record Data</span>
       </a>
     </li>
-    <li class="nav-item">
-    <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Equipment Data</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ route('rfid.index')}}">
-          <i class="fas fa-fw fa-square"></i>
-          <span>RFID Data</span>
-        </a>
-      </li>
+
+
     <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
+
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">

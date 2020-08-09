@@ -1,23 +1,24 @@
-
-
-@include('admin.template.partials.head')
-
+<!DOCTYPE html>
+<html lang="en">
+    @include('admin.template.partials.head')
 <body id="page-top">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
 
+
     <!-- Sidebar -->
-   @include('admin.template.partials.sidebar')
+    @include('admin.template.partials.sidebar')
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
-        @include('admin.template.partials.header')
-
       <!-- Main Content -->
-     @include('admin.template.partials.content')
+
+        @include('admin.template.partials.content')
+
+        <!--Page breadcrumbs-->
       <!-- End of Main Content -->
 
       <!-- Footer -->
@@ -36,10 +37,9 @@
   </a>
 
   <!-- Logout Modal-->
-
+  @include('admin.template.partials.logout')
 
   <!-- Bootstrap core JavaScript-->
-
 @include('admin.template.partials.scripts')
 
 </body>

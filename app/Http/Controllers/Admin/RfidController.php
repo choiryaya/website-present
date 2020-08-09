@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\RFID;
 use Illuminate\Http\Request;
 
 class RfidController extends Controller
@@ -24,7 +25,7 @@ class RfidController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.template.rfid.create');
     }
 
     /**
@@ -35,7 +36,15 @@ class RfidController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'name' => 'required',
+            'school' => 'required',
+        ]);
+        RFID::create([
+            'name' => $request->name,
+            'school' => $request->school,
+        ]);
+        return redirect()->route('rfid.index')->with('success','RFID data has been saved');
     }
 
     /**
