@@ -35,6 +35,8 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'Admin\AdminController@index')->name('home')->middleware('verified');
 Route::get('/rfid/data', 'Admin\AdminController@rfid')->name('rfid.data');
+Route::get('/equipment/data', 'Admin\AdminController@equipment')->name('equipment.data');
 //admin
 Route::resource('rfid','Admin\RfidController');
+Route::resource('equipment','Admin\EquipmentController');
 

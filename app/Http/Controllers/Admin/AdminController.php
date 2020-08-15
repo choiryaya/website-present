@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\RFID;
+use App\Equipment;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -13,5 +14,8 @@ class AdminController extends Controller
     }
     public function rfid(){
         return datatables()->of(RFID::query())->toJson();
+    }
+    public function equipment(){
+        return datatables()->of(Equipment::query())->toJson();
     }
 }
