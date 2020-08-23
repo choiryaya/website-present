@@ -41,14 +41,21 @@ class EquipmentController extends Controller
         $this->validate($request,[
             'name' => 'required',
             'description' => 'required',
-
+            'cover' => 'file|image',
         ]);
+        //kalau gaada cover
+        $cover = null;
+        //simpan gambar
+        if($request->hasFile('cover')){
+           $cover = $request->file('cover')->store('public/assets/covers');
+        }
+        //untuk fungsi create
         Equipment::create([
             'name' => $request->name,
             'description' => $request->description,
-
+            'cover' => $cover,
         ]);
-        return redirect()->route('equipment.index')->with('success','Equipment data has been saved');
+        return redirect()->route('equipment.index')->withSuccess('Books data has been saved');
     }
 
     /**
