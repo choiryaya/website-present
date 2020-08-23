@@ -80,9 +80,17 @@ class RfidController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, RFID $rfid)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+        $rfid->update([
+            'name' => $request->name,
+            'school' => $request->school,
+        ]);
+        return redirect()->route('rfid.index')
+                        ->with('info', 'Data has been updated');;
     }
 
     /**

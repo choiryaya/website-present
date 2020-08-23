@@ -9,6 +9,9 @@
           @if (session('success'))
           <div class="alert alert-success">{{ session('success')}}</div>
          @endif
+         @if (session('info'))
+          <div class="alert alert-success">{{ session('info')}}</div>
+         @endif
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
