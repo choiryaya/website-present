@@ -13,7 +13,12 @@ class AdminController extends Controller
         return view('admin.template.dashboard');
     }
     public function rfid(){
-        return datatables()->of(RFID::query())->toJson();
+        $rfid = RFID::orderBy('name','ASC');
+        return datatables()->of($rfid)
+                            //nambah ruting ke edit
+                            ->addIndexColumn()
+                            ->addColumn('action','admin.template.rfid.action')
+                            ->toJson();
     }
     public function equipment(){
         return datatables()->of(Equipment::query())->toJson();

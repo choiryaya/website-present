@@ -34,11 +34,10 @@ Route::get('/logout', 'AuthController@logout')->name('logout');
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'Admin\AdminController@index')->name('home')->middleware('verified');
-Route::get('/rfid/data', 'Admin\AdminController@rfid')->name('rfid.data');
-Route::get('/equipment/data', 'Admin\AdminController@equipment')->name('equipment.data');
-//admin
-Route::resource('rfid','Admin\RfidController');
-Route::resource('equipment','Admin\EquipmentController');
+// data rfid
+Route::get('/rfid/data','Admin\AdminController@rfid')->name('rfid.data');
+Route::resource('rfid', 'Admin\RfidController');
 
-Route::get('rfid/data', 'Admin/AdminController@show');
 
+Route::get('/equipment/data','Admin\AdminController@equipment')->name('equipment.data');
+Route::resource('equipment', 'Admin\EquipmentController');

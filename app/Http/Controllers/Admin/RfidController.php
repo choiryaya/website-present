@@ -64,9 +64,13 @@ class RfidController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(RFID $rfid)
     {
-        //
+        return view('admin.template.rfid.edit',[
+            'title' => 'Perpustakaan | Edit RFID Data',
+            'rfid' => $rfid,
+
+        ]);
     }
 
     /**

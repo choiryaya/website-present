@@ -20,6 +20,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>School</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 {{-- <tbody>
@@ -30,6 +31,11 @@
                   </tr>
                 </tbody> --}}
               </table>
+              <form action="" method="POST" id="deleteForm">
+                @csrf
+                @method("DELETE")
+                <input type="submit" class="btn btn-outline-danger" value="Delete" style="display: none">
+            </form>
             </div>
           </div>
         </div>
@@ -43,9 +49,10 @@
             serverSide: true,
             ajax: '{{ route('rfid.data') }}',
             columns: [
-                { data: 'id'},
+                { data: 'DT_RowIndex', orderable:false},
                 { data: 'name'},
-                { data: 'school'}
+                { data: 'school'},
+                { data: 'action'},
             ]
         });
     });

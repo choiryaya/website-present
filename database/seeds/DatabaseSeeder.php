@@ -11,6 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         $this->call(RFIDSeeder::class);
+        $this->call(UserSeeder::class);
+        $this->call(RFIDSeeder::class);
+         $this->call(EquipmentSeeder::class);
     }
 }
