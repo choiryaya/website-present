@@ -18,6 +18,6 @@ class Equipment extends Model
             return asset($this->cover);
         }
         // jika tidak ada cover
-        return 'https://via.placeholder.com/728x90.png?text=No+Cover';
+        return 'https://via.placeholder.com/100x100.png?text=No+Cover';
     }
 }
