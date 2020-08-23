@@ -40,3 +40,5 @@ Route::get('/equipment/data', 'Admin\AdminController@equipment')->name('equipmen
 Route::resource('rfid','Admin\RfidController');
 Route::resource('equipment','Admin\EquipmentController');
 
+Route::get('rfid/data', 'Admin/AdminController@show');
+
