@@ -17,7 +17,7 @@ class CreateEquipmentData extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->text('description');
-            $table->string('photos')->nullable()->default(null);;
+            $table->string('cover')->nullable()->default(null);;
             $table->timestamps();
         });
     }

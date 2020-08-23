@@ -21,6 +21,15 @@ class AdminController extends Controller
                             ->toJson();
     }
     public function equipment(){
-        return datatables()->of(Equipment::query())->toJson();
+        $rfid = Equipment::orderBy('name','ASC');
+        return datatables()->of($rfid)
+                            //nambah ruting ke edit
+                            ->addIndexColumn()
+                            ->editColumn('cover', function(Equipment $model){
+                                return '<img src="'.$model->getCover().'" height="100px">';
+                            })
+                            ->addColumn('action','admin.template.rfid.action')
+                            ->rawColumns(['cover','action'])
+                            ->toJson();
     }
 }

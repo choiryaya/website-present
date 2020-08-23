@@ -102,7 +102,7 @@ class RfidController extends Controller
     public function destroy(RFID $rfid)
     {
         $rfid->delete();
-        return redirect()->route('admin.book.index')
+        return redirect()->route('rfid.index')
                          ->withDanger('delete', 'Data has been deleted');
     }
 }

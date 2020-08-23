@@ -3,11 +3,14 @@
 
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">equipment Data</h1>
+            <h1 class="h3 mb-0 text-gray-800">RFID Data</h1>
         <a href="{{ route('equipment.create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Add Data</a>
           </div>
           @if (session('success'))
           <div class="alert alert-success">{{ session('success')}}</div>
+         @endif
+         @if (session('info'))
+          <div class="alert alert-success">{{ session('info')}}</div>
          @endif
 
         <!-- DataTales Example -->
@@ -20,7 +23,8 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Description</th>
-                    <th>Photos</th>
+                    <th>Cover</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 {{-- <tbody>
@@ -28,10 +32,14 @@
                     <td>Tiger Nixon</td>
                     <td>System Architect</td>
                     <td>Edinburgh</td>
-                    <td>AAAA</td>
                   </tr>
                 </tbody> --}}
               </table>
+              <form action="" method="POST" id="deleteForm">
+                @csrf
+                @method("DELETE")
+                <input type="submit" class="btn btn-outline-danger" value="Delete" style="display: none">
+            </form>
             </div>
           </div>
         </div>
@@ -45,10 +53,11 @@
             serverSide: true,
             ajax: '{{ route('equipment.data') }}',
             columns: [
-                { data: 'id'},
+                { data: 'DT_RowIndex', orderable:false},
                 { data: 'name'},
-                { data: 'description'}
-                { data: 'photos'}
+                { data: 'description'},
+                { data: 'cover'},
+                { data: 'action'},
             ]
         });
     });

@@ -41,12 +41,12 @@ class EquipmentController extends Controller
         $this->validate($request,[
             'name' => 'required',
             'description' => 'required',
-           
+
         ]);
         Equipment::create([
             'name' => $request->name,
             'description' => $request->description,
-            
+
         ]);
         return redirect()->route('equipment.index')->with('success','Equipment data has been saved');
     }
