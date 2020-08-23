@@ -28,8 +28,7 @@ class AdminController extends Controller
                             ->editColumn('cover', function(Equipment $model){
                                 return '<img src="'.$model->getCover().'" height="100px">';
                             })
-                            ->addColumn('action','admin.template.rfid.action')
-                            ->rawColumns(['cover','action'])
+                            ->rawColumns(['cover'])
                             ->toJson();
     }
 }

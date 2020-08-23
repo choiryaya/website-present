@@ -24,7 +24,6 @@
                     <th>Name</th>
                     <th>Description</th>
                     <th>Cover</th>
-                    <th>Action</th>
                   </tr>
                 </thead>
                 {{-- <tbody>
@@ -57,7 +56,6 @@
                 { data: 'name'},
                 { data: 'description'},
                 { data: 'cover'},
-                { data: 'action'},
             ]
         });
     });
