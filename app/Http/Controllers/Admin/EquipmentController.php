@@ -17,7 +17,8 @@ class EquipmentController extends Controller
      */
     public function index()
     {
-        return view('admin.template.equipment.index');
+        $model = Equipment::all();
+        return view('admin.template.equipment.index',compact($model));
     }
 
     /**

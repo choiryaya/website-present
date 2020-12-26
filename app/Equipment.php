@@ -8,7 +8,7 @@ class Equipment extends Model
 {
     protected $guarded = [];
     public $timestamps= false;
-    protected $table = 'equipment';
+    protected $table = 'data_record';
 
     public function getCover(){
         if(substr($this->cover,0,5) == "https"){

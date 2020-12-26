@@ -4,7 +4,6 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">RFID Data</h1>
-        <a href="{{ route('equipment.create')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Add Data</a>
           </div>
           @if (session('success'))
           <div class="alert alert-success">{{ session('success')}}</div>
@@ -20,10 +19,9 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Cover</th>
+                    <th>No</th>
+                    <th>RFID</th>
+                    <th>Weight</th>
                   </tr>
                 </thead>
                 {{-- <tbody>
@@ -53,9 +51,8 @@
             ajax: '{{ route('equipment.data') }}',
             columns: [
                 { data: 'DT_RowIndex', orderable:false},
-                { data: 'name'},
-                { data: 'description'},
-                { data: 'cover'},
+                { data: 'rfid'},
+                { data: 'weight'},
             ]
         });
     });
